@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FUERZA VIVA | 3D Fitness Studio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- 3D CANVAS -->
+    <canvas id="physicsCanvas"></canvas>
+
+
+    <!-- SCROLL PROGRESS -->
+    <div id="progressBar"></div>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header id="header">
+
+        <nav class="navbar">
+
+            <a href="#home" class="logo">
+                FUERZA <span>VIVA</span>
+            </a>
+
+
+            <div class="nav-links">
+
+                <a href="#home">Home</a>
+
+                <a href="#about">About</a>
+
+                <a href="#programs">Programs</a>
+
+                <a href="#trainers">Trainers</a>
+
+                <a href="#membership">Membership</a>
+
+                <a href="#contact">Contact</a>
+
+            </div>
+
+
+            <a href="#membership"
+               class="nav-button">
+
+                JOIN NOW
+
+            </a>
+
+
+            <button class="menu-button"
+                    id="menuButton">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= MOBILE MENU ================= -->
+
+    <div class="mobile-menu"
+         id="mobileMenu">
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#programs">Programs</a>
+
+        <a href="#trainers">Trainers</a>
+
+        <a href="#membership">Membership</a>
+
+        <a href="#contact">Contact</a>
+
+    </div>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero"
+             id="home">
+
+        <div class="hero-overlay"></div>
+
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                STRENGTH • DISCIPLINE • POWER
+            </p>
+
+
+            <h1>
+
+                BUILD
+                <span>STRENGTH.</span>
+
+                <br>
+
+                BUILD
+                <span>DISCIPLINE.</span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Welcome to FUERZA VIVA — a modern strength
+                and conditioning studio designed for people
+                who are serious about becoming stronger.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#membership"
+                   class="btn primary">
+
+                    START TRAINING
+
+                </a>
+
+
+                <a href="#programs"
+                   class="btn secondary">
+
+                    EXPLORE PROGRAMS
+
+                </a>
+
+            </div>
+
+
+            <div class="hero-stats">
+
+                <div class="stat">
+
+                    <strong data-count="12">
+                        0
+                    </strong>
+
+                    <span>
+                        Years Experience
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong data-count="640">
+                        0
+                    </strong>
+
+                    <span>
+                        Active Members
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong data-count="18">
+                        0
+                    </strong>
+
+                    <span>
+                        Classes / Week
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="physics-label">
+
+            3D PHYSICS EXPERIENCE
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about"
+             class="section">
+
+        <div class="container about-grid">
+
+
+            <div class="about-image">
+
+                <div class="image-number">
+                    01 / FUERZA VIVA
+                </div>
+
+            </div>
+
+
+            <div class="about-content">
+
+                <p class="section-tag">
+                    ABOUT US
+                </p>
+
+                <h2>
+                    TRAIN HARD.
+                    <br>
+                    TRAIN SMART.
+                </h2>
+
+
+                <p>
+
+                    FUERZA VIVA is a modern fitness studio
+                    created for people who want more from
+                    their training.
+
+                </p>
+
+
+                <p>
+
+                    We combine strength training,
+                    conditioning, mobility and expert
+                    coaching in one powerful environment.
+
+                </p>
+
+
+                <p>
+
+                    Whether you're starting your fitness
+                    journey or already an experienced athlete,
+                    our coaches help you train with purpose.
+
+                </p>
+
+
+                <a href="#trainers"
+                   class="btn secondary">
+
+                    MEET OUR COACHES
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROGRAMS ================= -->
+
+    <section id="programs"
+             class="section">
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-tag">
+                        TRAINING
+                    </p>
+
+                    <h2>
+                        CHOOSE YOUR
+                        <br>
+                        PROGRAM.
+                    </h2>
+
+                </div>
+
+
+                <p>
+
+                    Every program is designed to make
+                    you stronger, faster and more confident.
+
+                </p>
+
+            </div>
+
+
+            <div class="program-grid">
+
+
+                <article class="program-card">
+
+                    <span class="program-number">
+                        01
+                    </span>
+
+                    <h3>
+                        BARBELL CLUB
+                    </h3>
+
+                    <p>
+
+                        Progressive strength training
+                        using squat, bench press and
+                        deadlift movements.
+
+                    </p>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </article>
+
+
+                <article class="program-card">
+
+                    <span class="program-number">
+                        02
+                    </span>
+
+                    <h3>
+                        METCON
+                    </h3>
+
+                    <p>
+
+                        High intensity conditioning
+                        using kettlebells, rowing and
+                        bodyweight exercises.
+
+                    </p>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </article>
+
+
+                <article class="program-card">
+
+                    <span class="program-number">
+                        03
+                    </span>
+
+                    <h3>
+                        MOBILITY
+                    </h3>
+
+                    <p>
+
+                        Improve flexibility, movement
+                        quality and recovery through
+                        controlled mobility sessions.
+
+                    </p>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </article>
+
+
+                <article class="program-card">
+
+                    <span class="program-number">
+                        04
+                    </span>
+
+                    <h3>
+                        BOXING
+                    </h3>
+
+                    <p>
+
+                        Learn footwork, combinations,
+                        pad work and boxing fundamentals.
+
+                    </p>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </article>
+
+
+                <article class="program-card">
+
+                    <span class="program-number">
+                        05
+                    </span>
+
+                    <h3>
+                        PERSONAL TRAINING
+                    </h3>
+
+                    <p>
+
+                        One-to-one coaching and a
+                        customized training program
+                        built around your goals.
+
+                    </p>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </article>
+
+
+                <article class="program-card">
+
+                    <span class="program-number">
+                        06
+                    </span>
+
+                    <h3>
+                        SMALL GROUP
+                    </h3>
+
+                    <p>
+
+                        Train with a small team while
+                        receiving focused coaching and
+                        individual attention.
+
+                    </p>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TRAINERS ================= -->
+
+    <section id="trainers"
+             class="section">
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-tag">
+                        OUR TEAM
+                    </p>
+
+                    <h2>
+                        THE COACHES
+                        <br>
+                        ON THE FLOOR.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="trainer-grid">
+
+
+                <div class="trainer-card">
+
+                    <div class="trainer-info">
+
+                        <h3>
+                            MARCUS
+                        </h3>
+
+                        <span>
+                            Strength & Conditioning
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="trainer-card">
+
+                    <div class="trainer-info">
+
+                        <h3>
+                            PRIYA
+                        </h3>
+
+                        <span>
+                            Mobility & Recovery
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="trainer-card">
+
+                    <div class="trainer-info">
+
+                        <h3>
+                            DIEGO
+                        </h3>
+
+                        <span>
+                            Boxing Coach
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="trainer-card">
+
+                    <div class="trainer-info">
+
+                        <h3>
+                            SAM
+                        </h3>
+
+                        <span>
+                            HIIT & Conditioning
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MEMBERSHIP ================= -->
+
+    <section id="membership"
+             class="section">
+
+        <div class="container">
+
+
+            <div class="section-heading centered">
+
+                <p class="section-tag">
+                    MEMBERSHIP
+                </p>
+
+                <h2>
+                    FIND YOUR
+                    <br>
+                    LEVEL.
+                </h2>
+
+                <p>
+                    Choose the membership that fits
+                    your training goals.
+                </p>
+
+            </div>
+
+
+            <div class="billing">
+
+                <span id="monthlyLabel"
+                      class="active">
+                    MONTHLY
+                </span>
+
+
+                <button id="billingSwitch"
+                        class="switch">
+
+                    <span></span>
+
+                </button>
+
+
+                <span id="annualLabel">
+                    ANNUAL
+                </span>
+
+                <small>
+                    SAVE 18%
+                </small>
+
+            </div>
+
+
+            <div class="plans">
+
+
+                <div class="plan">
+
+                    <p class="plan-name">
+                        DROP-IN
+                    </p>
+
+                    <h3>
+
+                        ₹<span class="price"
+                              data-monthly="899"
+                              data-annual="737">
+                            899
+                        </span>
+
+                    </h3>
+
+                    <p class="cycle">
+                        PER CLASS
+                    </p>
+
+
+                    <ul>
+
+                        <li>
+                            Single class access
+                        </li>
+
+                        <li>
+                            No commitment
+                        </li>
+
+                        <li>
+                            Guest pass eligible
+                        </li>
+
+                    </ul>
+
+
+                    <a href="#contact"
+                       class="btn secondary">
+                        GET STARTED
+                    </a>
+
+                </div>
+
+
+                <div class="plan featured">
+
+                    <div class="popular">
+                        MOST POPULAR
+                    </div>
+
+                    <p class="plan-name">
+                        UNLIMITED
+                    </p>
+
+                    <h3>
+
+                        ₹<span class="price"
+                              data-monthly="3499"
+                              data-annual="2870">
+                            3499
+                        </span>
+
+                    </h3>
+
+                    <p class="cycle">
+                        PER MONTH
+                    </p>
+
+
+                    <ul>
+
+                        <li>
+                            Unlimited classes
+                        </li>
+
+                        <li>
+                            All programs
+                        </li>
+
+                        <li>
+                            Guest pass every month
+                        </li>
+
+                        <li>
+                            Priority booking
+                        </li>
+
+                        <li>
+                            Locker + towel service
+                        </li>
+
+                    </ul>
+
+
+                    <a href="#contact"
+                       class="btn primary">
+
+                        JOIN NOW
+
+                    </a>
+
+                </div>
+
+
+                <div class="plan">
+
+                    <p class="plan-name">
+                        ELITE COACHING
+                    </p>
+
+                    <h3>
+
+                        ₹<span class="price"
+                              data-monthly="6999"
+                              data-annual="5739">
+                            6999
+                        </span>
+
+                    </h3>
+
+                    <p class="cycle">
+                        PER MONTH
+                    </p>
+
+
+                    <ul>
+
+                        <li>
+                            Everything in Unlimited
+                        </li>
+
+                        <li>
+                            Personal training
+                        </li>
+
+                        <li>
+                            Custom programming
+                        </li>
+
+                        <li>
+                            Monthly progress check
+                        </li>
+
+                    </ul>
+
+
+                    <a href="#contact"
+                       class="btn secondary">
+
+                        GET STARTED
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SCHEDULE ================= -->
+
+    <section id="schedule"
+             class="section">
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-tag">
+                        CLASSES
+                    </p>
+
+                    <h2>
+                        THIS WEEK'S
+                        <br>
+                        SCHEDULE.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="filters">
+
+                <button class="filter active"
+                        data-filter="all">
+                    ALL
+                </button>
+
+                <button class="filter"
+                        data-filter="strength">
+                    STRENGTH
+                </button>
+
+                <button class="filter"
+                        data-filter="cardio">
+                    CARDIO
+                </button>
+
+                <button class="filter"
+                        data-filter="mobility">
+                    MOBILITY
+                </button>
+
+            </div>
+
+
+            <div class="schedule">
+
+
+                <div class="schedule-row"
+                     data-type="strength">
+
+                    <strong>
+                        BARBELL CLUB
+                    </strong>
+
+                    <span>
+                        MON / WED / FRI — 6:00 AM
+                    </span>
+
+                    <b>
+                        MARCUS
+                    </b>
+
+                </div>
+
+
+                <div class="schedule-row"
+                     data-type="cardio">
+
+                    <strong>
+                        METCON HIIT
+                    </strong>
+
+                    <span>
+                        MON / WED / FRI — 6:00 PM
+                    </span>
+
+                    <b>
+                        SAM
+                    </b>
+
+                </div>
+
+
+                <div class="schedule-row"
+                     data-type="mobility">
+
+                    <strong>
+                        MOBILITY FLOW
+                    </strong>
+
+                    <span>
+                        TUE / THU — 7:30 AM
+                    </span>
+
+                    <b>
+                        PRIYA
+                    </b>
+
+                </div>
+
+
+                <div class="schedule-row"
+                     data-type="strength">
+
+                    <strong>
+                        POWERLIFTING
+                    </strong>
+
+                    <span>
+                        TUE / THU — 5:00 PM
+                    </span>
+
+                    <b>
+                        MARCUS
+                    </b>
+
+                </div>
+
+
+                <div class="schedule-row"
+                     data-type="cardio">
+
+                    <strong>
+                        BOXING
+                    </strong>
+
+                    <span>
+                        SAT — 9:00 AM
+                    </span>
+
+                    <b>
+                        DIEGO
+                    </b>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TESTIMONIAL ================= -->
+
+    <section class="testimonial">
+
+        <div class="container">
+
+            <p class="section-tag">
+                MEMBER STORIES
+            </p>
+
+            <blockquote id="testimonialText">
+
+                "FUERZA VIVA is the first gym where
+                I actually enjoy training."
+
+            </blockquote>
+
+            <p id="testimonialAuthor">
+                — RITIKA S., MEMBER
+            </p>
+
+
+            <div class="testimonial-dots"
+                 id="testimonialDots">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FAQ ================= -->
+
+    <section id="faq"
+             class="section">
+
+        <div class="container faq-container">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-tag">
+                        FAQ
+                    </p>
+
+                    <h2>
+                        QUESTIONS,
+                        <br>
+                        ANSWERED.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-list">
+
+
+                <div class="faq-item active">
+
+                    <button class="faq-question">
+
+                        DO I NEED GYM EXPERIENCE?
+
+                        <span>
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+
+                            No. Our coaches work with
+                            beginners as well as experienced
+                            athletes.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        DO YOU OFFER TRIAL SESSIONS?
+
+                        <span>
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+
+                            Yes. Contact our team to book
+                            your first training session.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        CAN I CANCEL MY MEMBERSHIP?
+
+                        <span>
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+
+                            Yes. Membership cancellation
+                            is available according to the
+                            membership terms.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        WHAT AGE CAN JOIN?
+
+                        <span>
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+
+                            Members aged 16 and above can
+                            join regular coached classes
+                            with appropriate consent.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <footer id="contact">
+
+        <div class="container">
+
+
+            <div class="footer-main">
+
+                <p class="section-tag">
+                    START TODAY
+                </p>
+
+                <h2>
+
+                    YOUR FIRST
+                    <br>
+                    CLASS IS
+                    <span>ON US.</span>
+
+                </h2>
+
+
+                <a href="mailto:hello@fuerzaviva.in"
+                   class="btn primary">
+
+                    BOOK FREE TRIAL
+
+                </a>
+
+            </div>
+
+
+            <div class="footer-grid">
+
+
+                <div>
+
+                    <h3 class="logo">
+                        FUERZA
+                        <span>VIVA</span>
+                    </h3>
+
+                    <p>
+
+                        Strength.
+                        Discipline.
+                        Community.
+
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h4>
+                        HOURS
+                    </h4>
+
+                    <p>
+                        MON–FRI
+                        <br>
+                        5:30 AM – 9:00 PM
+                    </p>
+
+                    <p>
+                        SAT–SUN
+                        <br>
+                        7:00 AM – 4:00 PM
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h4>
+                        CONTACT
+                    </h4>
+
+                    <p>
+                        hello@fuerzaviva.in
+                    </p>
+
+                    <p>
+                        +91 90000 00000
+                    </p>
+
+                    <p>
+                        Bhubaneswar, Odisha
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="copyright">
+
+                © 2026 FUERZA VIVA.
+                ALL RIGHTS RESERVED.
+
+                <span>
+                    3D FITNESS EXPERIENCE
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- BACK TO TOP -->
+
+    <button id="backToTop">
+        ↑
+    </button>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>
