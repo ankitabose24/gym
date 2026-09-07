@@ -2,7 +2,7 @@ FUERZA VIVA
 Industry: Gym / Fitness & Wellness
 Objective: A modern, interactive fitness website designed around strength, discipline, and performance, combining a bold gym aesthetic with an immersive 3D physics experience.
 
-Live Demo: [https://gym-topaz-seven.vercel.app/](https://gym-topaz-seven.vercel.app/)
+Live Demo: https://gym-rose-three.vercel.app/
 
 Technologies Used
 
@@ -134,7 +134,7 @@ No build step is required. The project uses CDN-based libraries for Three.js and
 
 The website is deployed using Vercel.
 
-Live Website: [FUERZA VIVA — Live Demo](https://gym-topaz-seven.vercel.app/)
+Live Website: [FUERZA VIVA — Live Demo](https://gym-rose-three.vercel.app/)
 
 The project can be deployed by connecting the GitHub repository to Vercel. Every new push to the main branch can then be deployed automatically.
 
