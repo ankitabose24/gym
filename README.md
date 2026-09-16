@@ -171,3 +171,31 @@ ANKITA BOSE
 A SuuSri AI
 
 The project was developed as a modern full-stack/web development project focusing on responsive UI design, JavaScript interactions, animation, and 3D physics-based web experiences.
+
+---
+
+## SMTP Contact Form Integration (Week 3 Task 1)
+
+### Architecture
+`Frontend (Form) → API (/api/contact) → Express Backend → Nodemailer (SMTP) → Company Email`
+
+- **Frontend**: Responsive contact form with client-side validation, error banners, and loading state.
+- **API Endpoint**: `POST /api/contact` handling JSON payloads with CORS enabled.
+- **Backend Validation**: Strict server-side verification for names, emails, and messages, plus HTML sanitization.
+- **Nodemailer & SMTP**: Transports email notifications using Gmail SMTP / secure TLS with an automated test fallback.
+- **Vercel Deployment**: Serverless architecture powered by `vercel.json` routing `/api/(.*)` to `api/index.js`.
+
+### Local Setup & Running
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Configure environment variables (.env)
+cp .env.example .env
+# Edit .env with your SMTP credentials
+
+# 3. Start development server
+npm start
+```
+Server runs at `http://localhost:5000`.
+

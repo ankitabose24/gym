@@ -1151,29 +1151,131 @@
         <div class="container">
 
 
-            <div class="footer-main">
+            <div class="contact-wrapper">
+                <div class="contact-intro">
+                    <p class="section-tag">START TODAY</p>
+                    <h2>
+                        YOUR FIRST<br>
+                        CLASS IS <span>ON US.</span>
+                    </h2>
+                    <p class="contact-subtext">
+                        Ready to level up your strength and discipline? Claim your complimentary trial session or reach out to our coaching staff with any questions.
+                    </p>
 
-                <p class="section-tag">
-                    START TODAY
-                </p>
+                    <!-- Feature Badges -->
+                    <div class="contact-badges">
+                        <div class="badge-item">
+                            <span class="badge-icon">⚡</span>
+                            <div>
+                                <strong>Free 1-Day Pass</strong>
+                                <small>Full facility access</small>
+                            </div>
+                        </div>
+                        <div class="badge-item">
+                            <span class="badge-icon">🏋️</span>
+                            <div>
+                                <strong>Coached Sessions</strong>
+                                <small>Strength & conditioning</small>
+                            </div>
+                        </div>
+                        <div class="badge-item">
+                            <span class="badge-icon">✓</span>
+                            <div>
+                                <strong>No Lock-In</strong>
+                                <small>Cancel anytime policy</small>
+                            </div>
+                        </div>
+                    </div>
 
-                <h2>
+                    <!-- Direct Info Cards -->
+                    <div class="contact-info-cards">
+                        <div class="info-card">
+                            <span class="info-icon">✉</span>
+                            <div>
+                                <small>DIRECT EMAIL</small>
+                                <a href="mailto:hello@fuerzaviva.in">hello@fuerzaviva.in</a>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <span class="info-icon">📞</span>
+                            <div>
+                                <small>PHONE & WHATSAPP</small>
+                                <p>+91 90000 00000</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <span class="info-icon">📍</span>
+                            <div>
+                                <small>LOCATION</small>
+                                <p>Bhubaneswar, Odisha</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                    YOUR FIRST
-                    <br>
-                    CLASS IS
-                    <span>ON US.</span>
+                <!-- CONTACT FORM -->
+                <div class="contact-form-card">
+                    <div class="form-header">
+                        <h3>BOOK YOUR TRIAL</h3>
+                        <p>Fill out the form below and we will confirm within 24 hours.</p>
+                    </div>
 
-                </h2>
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <!-- Status Alert Banner -->
+                        <div id="formStatus" class="form-status" style="display: none;"></div>
 
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">FULL NAME *</label>
+                                <input type="text" id="name" name="name" placeholder="Marcus Miller" required autocomplete="name">
+                                <span class="field-error" id="nameError"></span>
+                            </div>
 
-                <a href="mailto:hello@fuerzaviva.in"
-                   class="btn primary">
+                            <div class="form-group">
+                                <label for="email">EMAIL ADDRESS *</label>
+                                <input type="email" id="email" name="email" placeholder="marcus@example.com" required autocomplete="email">
+                                <span class="field-error" id="emailError"></span>
+                            </div>
+                        </div>
 
-                    BOOK FREE TRIAL
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">PHONE NUMBER</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel">
+                            </div>
 
-                </a>
+                            <div class="form-group">
+                                <label for="program">INTERESTED IN</label>
+                                <div class="select-wrapper">
+                                    <select id="program" name="program">
+                                        <option value="Free Trial Session">⚡ Free Trial Session</option>
+                                        <option value="Barbell Club">01 Barbell Club (Strength)</option>
+                                        <option value="Metcon">02 Metcon (Conditioning)</option>
+                                        <option value="Mobility Flow">03 Mobility Flow</option>
+                                        <option value="Boxing">04 Boxing Fundamentals</option>
+                                        <option value="Personal Training">05 1-on-1 Personal Training</option>
+                                        <option value="Small Group Training">06 Small Group Coaching</option>
+                                        <option value="General Inquiry">General Question / Membership</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="form-group">
+                            <label for="message">MESSAGE / GOALS *</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your background, training goals, or questions..." required></textarea>
+                            <span class="field-error" id="messageError"></span>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="btn primary submit-btn">
+                            <span class="btn-text">SEND INQUIRY →</span>
+                            <span class="btn-loader" style="display: none;">
+                                <span class="spinner-ring"></span>
+                                SENDING INQUIRY...
+                            </span>
+                        </button>
+                    </form>
+                </div>
             </div>
 
 

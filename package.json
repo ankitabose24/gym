@@ -1,0 +1,29 @@
+{
+  "name": "gym",
+  "version": "1.0.0",
+  "description": "FUERZA VIVA\r Industry: Gym / Fitness & Wellness\r Objective: A modern, interactive fitness website designed around strength, discipline, and performance, combining a bold gym aesthetic with an immersive 3D physics experience.",
+   "main": "server.js",
+   "scripts": {
+    "start": "node server.js",
+     "dev": "node server.js"
+  },
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankitabose24/gym.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ankitabose24/gym/issues"
+  },
+  "homepage": "https://github.com/ankitabose24/gym#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "nodemailer": "^10.0.10"
+  }
+}

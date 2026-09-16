@@ -1411,3 +1411,98 @@ window.addEventListener(
 
     }
 );
+/* =====================================================
+   CONTACT FORM SUBMISSION (HTTP POST -> /api/contact)
+===================================================== */
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+const submitBtn = document.getElementById("submitBtn");
+const btnText = submitBtn?.querySelector(".btn-text");
+const btnLoader = submitBtn?.querySelector(".btn-loader");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // Reset previous state
+        formStatus.style.display = "none";
+        formStatus.className = "form-status";
+        document.querySelectorAll(".field-error").forEach(el => el.textContent = "");
+
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const phoneInput = document.getElementById("phone");
+        const programInput = document.getElementById("program");
+        const messageInput = document.getElementById("message");
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const phone = phoneInput.value.trim();
+        const program = programInput.value;
+        const message = messageInput.value.trim();
+
+        // Client-side validation
+        let hasError = false;
+
+        if (!name || name.length < 2) {
+            document.getElementById("nameError").textContent = "Please enter your full name.";
+            hasError = true;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !emailRegex.test(email)) {
+            document.getElementById("emailError").textContent = "Please enter a valid email address.";
+            hasError = true;
+        }
+
+        if (!message || message.length < 5) {
+            document.getElementById("messageError").textContent = "Please write a message (at least 5 characters).";
+            hasError = true;
+        }
+
+        if (hasError) return;
+
+        // Button Loading State
+        submitBtn.disabled = true;
+        if (btnText) btnText.style.display = "none";
+        if (btnLoader) {
+            btnLoader.style.display = "inline-flex";
+            btnLoader.style.alignItems = "center";
+            btnLoader.style.justifyContent = "center";
+        }
+
+        try {
+            // HTTP POST Request to Express API Endpoint
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ name, email, phone, program, message })
+            });
+
+            const data = await response.json();
+
+            if (response.ok && data.success) {
+                formStatus.innerHTML = `<span>✓</span> <span>${data.message || "Thank you! Your inquiry has been sent."}</span>`;
+                formStatus.className = "form-status success";
+                formStatus.style.display = "flex";
+                contactForm.reset();
+            } else {
+                const errorMsg = data.details ? data.details.join(" ") : (data.error || "Failed to send message. Please try again.");
+                formStatus.innerHTML = `<span>⚠️</span> <span>${errorMsg}</span>`;
+                formStatus.className = "form-status error";
+                formStatus.style.display = "flex";
+            }
+        } catch (error) {
+            console.error("Submission error:", error);
+            formStatus.innerHTML = `<span>⚠️</span> <span>A network error occurred. Please check your connection and try again.</span>`;
+            formStatus.className = "form-status error";
+            formStatus.style.display = "flex";
+        } finally {
+            submitBtn.disabled = false;
+            if (btnText) btnText.style.display = "inline-block";
+            if (btnLoader) btnLoader.style.display = "none";
+        }
+    });
+}
