@@ -174,8 +174,6 @@ The project was developed as a modern full-stack/web development project focusin
 
 ---
 
-## SMTP Contact Form Integration (Week 3 Task 1)
-
 ### Architecture
 `Frontend (Form) → API (/api/contact) → Express Backend → Nodemailer (SMTP) → Company Email`
 
@@ -191,7 +189,7 @@ The project was developed as a modern full-stack/web development project focusin
 npm install
 
 # 2. Configure environment variables (.env)
-cp .env.example .env
+cp  .env
 # Edit .env with your SMTP credentials
 
 # 3. Start development server
